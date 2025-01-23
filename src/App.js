@@ -223,12 +223,14 @@ function App() {
         </RightContainer>
       </SkyOceanSection>
       <OceanSection>
-      <h2>My Projects</h2>
-      <ProjectsButton onClick={() => console.log('Redirecionando...')}>
-      View All Projects
-      </ProjectsButton>
-      </OceanSection>
-      <OceanFloorSection>
+  <h2>My Projects</h2>
+  <button className="custom-button" onClick={() => console.log('Redirecionando...')}>
+    <div className="left"></div>
+    Projects
+    <div className="right"></div>
+  </button>
+</OceanSection>
+    <OceanFloorSection>
         <h2>Ocean Floor</h2>
         <p>This is the ocean floor section.</p>
       </OceanFloorSection>

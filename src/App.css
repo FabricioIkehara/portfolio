@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -24,54 +26,55 @@
 }
 
 .title {
-  font-family: 'Luckiest Guy', serif; /* Aplica a fonte Luckiest Guy */
+  font-family: 'Luckiest Guy', serif;
   font-size: 42px;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Contorno para contraste */
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Adiciona transição suave */
-  letter-spacing: 1px; /* Adiciona um pequeno espaçamento entre as letras */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  letter-spacing: 1px;
 }
 
 .title:hover {
-  transform: scale(1.1); /* Aumenta o tamanho do texto */
-  color: #ffcc00; /* Muda a cor do texto */
+  transform: scale(1.1);
+  color: #ffcc00;
 }
 
 .subtitle {
   font-family: 'Luckiest Guy', serif;
   font-size: 32px;
   color: white;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); /* Contorno para contraste */
-  margin-top: 50px; /* Adiciona um espaçamento acima do subtítulo */
-  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  margin-top: 50px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .subtitle:hover {
-  transform: scale(1.1); /* Efeito de escala no hover */
+  transform: scale(1.1);
 }
 
 .about-me {
   font-family: 'Luckiest Guy', serif;
   font-size: 18px;
   color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Contorno para contraste */
-  max-width: 600px; /* Limita a largura para uma melhor leitura */
-  line-height: 1.5; /* Espaçamento entre linhas para uma melhor leitura */
-  margin-top: 40px; /* Aumenta o espaçamento acima do texto */
-  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  line-height: 1.5;
+  margin-top: 40px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .about-me:hover {
-  transform: scale(1.1); /* Efeito de escala no hover */
+  transform: scale(1.1);
 }
 
 .custom-carousel {
   position: absolute;
-  top: 55%; /* Centraliza verticalmente */
-  left: 70%; /* Posiciona na metade direita */
-  transform: translate(-50%, -50%); /* Ajusta para manter centralizado */
-  width: 350px; /* Define a largura do carrossel */
-  height: 350px; /* Define a altura do carrossel */
+  top: 55%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  border: 1px solid white;
 }
 
 .custom-carousel img {
@@ -108,27 +111,41 @@
 
 .right-container {
   margin-top: 20px;
-  align-self: center; /* Centraliza horizontalmente no contêiner pai */
-  text-align: center; /* Centraliza o texto dentro da própria div */
+  align-self: center;
+  text-align: center;
 }
 
 h2 {
   font-family: 'Luckiest Guy', serif;
-  font-size: 48px; /* Aumenta o tamanho do título */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao título */
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out;
+}
+
+h2:hover {
+  transform: scale(1.1);
 }
 
 h3 {
   font-family: 'Luckiest Guy', serif;
-  font-size: 36px; /* Aumenta o tamanho do subtítulo */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao subtítulo */
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out;
+}
+
+h3:hover {
+  transform: scale(1.1);
 }
 
 p {
   font-family: 'Luckiest Guy', serif;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out;
 }
 
+p:hover {
+  transform: scale(1.05);
+}
 
 .ProjectsSection {
   background-size: cover;
@@ -148,19 +165,61 @@ p {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.ProjectsButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-family: 'Luckiest Guy', serif;
-  font-size: 24px;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
+.custom-button {
+  position: relative;
+  padding: 10px 40px;
+  border: 1px solid rgb(253, 252, 252);
+  background: none;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: var(--text-color);
+  
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px;
+  z-index: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
 }
 
-.ProjectsButton:hover {
-  transform: scale(1.1);
+.custom-button:hover {
+  transform: scale(1.1); 
+}
+
+.custom-button::before {
+  content: '';
+  pointer-events: none;
+  opacity: 0.6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+  
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 2.5s linear infinite both; /* Aumenta a frequência das bolhas */
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
 }
