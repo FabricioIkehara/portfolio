@@ -1,0 +1,166 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.header {
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.title {
+  font-family: 'Luckiest Guy', serif; /* Aplica a fonte Luckiest Guy */
+  font-size: 42px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Contorno para contraste */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Adiciona transição suave */
+  letter-spacing: 1px; /* Adiciona um pequeno espaçamento entre as letras */
+}
+
+.title:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do texto */
+  color: #ffcc00; /* Muda a cor do texto */
+}
+
+.subtitle {
+  font-family: 'Luckiest Guy', serif;
+  font-size: 32px;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); /* Contorno para contraste */
+  margin-top: 50px; /* Adiciona um espaçamento acima do subtítulo */
+  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
+}
+
+.subtitle:hover {
+  transform: scale(1.1); /* Efeito de escala no hover */
+}
+
+.about-me {
+  font-family: 'Luckiest Guy', serif;
+  font-size: 18px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Contorno para contraste */
+  max-width: 600px; /* Limita a largura para uma melhor leitura */
+  line-height: 1.5; /* Espaçamento entre linhas para uma melhor leitura */
+  margin-top: 40px; /* Aumenta o espaçamento acima do texto */
+  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
+}
+
+.about-me:hover {
+  transform: scale(1.1); /* Efeito de escala no hover */
+}
+
+.custom-carousel {
+  position: absolute;
+  top: 55%; /* Centraliza verticalmente */
+  left: 70%; /* Posiciona na metade direita */
+  transform: translate(-50%, -50%); /* Ajusta para manter centralizado */
+  width: 350px; /* Define a largura do carrossel */
+  height: 350px; /* Define a altura do carrossel */
+}
+
+.custom-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.section {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  color: white;
+}
+
+.sky-ocean-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+}
+
+.content {
+  max-width: 800px;
+  text-align: left;
+}
+
+.right-container {
+  margin-top: 20px;
+  align-self: center; /* Centraliza horizontalmente no contêiner pai */
+  text-align: center; /* Centraliza o texto dentro da própria div */
+}
+
+h2 {
+  font-family: 'Luckiest Guy', serif;
+  font-size: 48px; /* Aumenta o tamanho do título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao título */
+}
+
+h3 {
+  font-family: 'Luckiest Guy', serif;
+  font-size: 36px; /* Aumenta o tamanho do subtítulo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao subtítulo */
+}
+
+p {
+  font-family: 'Luckiest Guy', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+}
+
+
+.ProjectsSection {
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.ProjectsSection h2 {
+  font-family: 'Luckiest Guy', serif;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.ProjectsButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: 'Luckiest Guy', serif;
+  font-size: 24px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ProjectsButton:hover {
+  transform: scale(1.1);
+}
