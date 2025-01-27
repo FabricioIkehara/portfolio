@@ -1,14 +1,15 @@
-import styled from 'styled-components';
+import React, { useEffect } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
-import skyImage from './assets/sky.jpg'; // Imagem do céu
-import skyOceanImage from './assets/sky-ocean.jpg'; // Imagem do céu tocando o oceano
-import oceanImage from './assets/ocean.jpg'; // Imagem do oceano
-import oceanFloorImage from './assets/ocean-floor.jpg'; // Imagem do fundo do oceano
+import skyImage from './assets/sky.jpg';
+import skyOceanImage from './assets/sky-ocean.jpg';
+import oceanImage from './assets/ocean.jpg';
+import oceanFloorImage from './assets/ocean-floor.jpg';
 import c1 from './assets/c1.png';
 import c2 from './assets/c2.png';
 import c3 from './assets/c3.png';
 import c4 from './assets/c4.png';
-// Importe os logos das stacks
 import htmlLogo from './assets/html-logo.png';
 import cssLogo from './assets/css-logo.png';
 import jsLogo from './assets/js-logo.png';
@@ -19,10 +20,7 @@ import pythonLogo from './assets/python-logo.png';
 import javaLogo from './assets/java-logo.png';
 import mongodbLogo from './assets/mongodb-logo.png';
 import mysqlLogo from './assets/mysql-logo.png';
-
-// Importar a fonte do Google Fonts
-import { createGlobalStyle } from 'styled-components';
-import { useEffect } from 'react';
+import Projects from './pages/Projects/index.js';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
@@ -63,7 +61,7 @@ const StacksContainer = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
-  margin-left: 40px; /* Ajusta a posição para a direita */
+  margin-left: 40px; 
 `;
 
 const StackLogo = styled.img`
@@ -133,7 +131,9 @@ const RightContainer = styled.div.attrs(() => ({
   text-align: center;
 `;
 
-function App() {
+const HomePage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const sections = document.querySelectorAll("section, .header");
     let currentSection = 0;
@@ -149,7 +149,7 @@ function App() {
 
       setTimeout(() => {
         isScrolling = false;
-      }, 800); // Duração da rolagem suave
+      }, 800); 
     }
 
     window.addEventListener("wheel", handleScroll);
@@ -202,9 +202,9 @@ function App() {
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </CustomCarousel>
       </Header>
@@ -223,18 +223,43 @@ function App() {
         </RightContainer>
       </SkyOceanSection>
       <OceanSection>
-  <h2>My Projects</h2>
-  <button className="custom-button" onClick={() => console.log('Redirecionando...')}>
-    <div className="left"></div>
-    Projects
-    <div className="right"></div>
-  </button>
+          <div className="section-container">
+            <div className="left-section">
+              <h2>My Projects</h2>
+              <button
+                className="custom-button" // Classe CSS para o botão Projects
+                onClick={() => navigate('/projects')}
+              >
+                Projects
+              </button>
+            </div>
+            <div className="right-section">
+              <h2>About Me</h2>
+              <button
+                className="aboutMebutton"
+                onClick={() => navigate('/about')}
+              >
+                About Me
+              </button>
+            </div>
+          </div>
 </OceanSection>
-    <OceanFloorSection>
+      <OceanFloorSection>
         <h2>Ocean Floor</h2>
         <p>This is the ocean floor section.</p>
       </OceanFloorSection>
     </div>
+  );
+}
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </Router>
   );
 }
 

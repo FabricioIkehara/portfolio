@@ -1,3 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.header {
+  background-image: url('./assets/sky.jpg');
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.title-container {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+}
+
+.about-me {
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+}
+
+.stacks-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 40px; 
+}
+
+.stack-logo {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.stack-logo:hover {
+  transform: scale(1.2);
+}
+
+.custom-carousel {
+  margin-top: 40px;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  color: white;
+}
+
+.sky-ocean-section {
+  background-image: url('./assets/sky-ocean.jpg');
+  text-align: left;
+}
+
+.projects-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: 'Luckiest Guy', serif;
+  font-size: 24px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.projects-button:hover {
+  transform: scale(1.1);
+}
+
+.ocean-section {
+  background-image: url('./assets/ocean.jpg');
+}
+
+.ocean-floor-section {
+  background-image: url('./assets/ocean-floor.jpg');
+}
+
+.content {
+  max-width: 800px;
+}
+
+.right-container {
+  margin-top: 20px;
+  text-align: center;
+}
 
 
 .App {
@@ -165,11 +272,12 @@ p:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+
 .custom-button {
   position: relative;
   padding: 10px 40px;
   border: 1px solid rgb(253, 252, 252);
-  background: none;
+  background: var(--btn-color); /* Cor de fundo azul */
   cursor: pointer;
   
   font-family: "Luckiest Guy", cursive;
@@ -178,13 +286,13 @@ p:hover {
   font-size: 30px;
   color: var(--text-color);
   
-  background-color: var(--btn-color);
   box-shadow: var(--shadow-color) 2px 2px 22px;
   border-radius: 4px;
-  z-index: 0;
   overflow: hidden;
   white-space: nowrap;
-  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
+  transition: transform 0.3s ease-in-out;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .custom-button:hover {
@@ -196,16 +304,22 @@ p:hover {
   pointer-events: none;
   opacity: 0.6;
   background:
-    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+    radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 60% 50%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
+    radial-gradient(circle at 30% 60%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
+    radial-gradient(circle at 70% 40%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
   
   width: 100%;
   height: 300%;
   top: 0;
   left: 0;
   position: absolute;
-  animation: bubbles 2.5s linear infinite both; /* Aumenta a frequência das bolhas */
+  z-index: 1;
+  animation: bubbles 2.5s linear infinite both; 
 }
 
 @keyframes bubbles {
@@ -221,5 +335,101 @@ p:hover {
   --text-color: hsla(210, 50%, 85%, 1);
   --shadow-color: hsla(210, 40%, 52%, .4);
   --btn-color: hsl(210, 80%, 42%);
-  --bg-color: #141218;
+  --bg-color: #6242a1;
+}
+
+
+.section-container {
+  display: flex; 
+  justify-content: center;
+  align-items: flex-start; /* Alinha os itens ao topo */
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.left-section {
+  flex: 1; /* Ocupa metade do espaço disponível */
+  margin-left: 20%; /* Margem à esquerda */
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Organiza os itens em coluna (um embaixo do outro) */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  justify-content: center; 
+}
+
+
+.right-section {
+  flex: 1; /* Ocupa metade do espaço disponível */
+  margin-right: 10%; /* Margem à direita */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.aboutMebutton {
+  
+  position: relative;
+  padding: 10px 40px;
+  border: 1px solid rgb(253, 252, 252);
+  background: var(--btn-color); /* Cor de fundo azul */
+  cursor: pointer;
+  
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: var(--text-color);
+  
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: transform 0.3s ease-in-out;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
+
+  /* Adicione o gradiente e efeitos específicos */
+  background-image: linear-gradient(144deg, #191ea8, #361cdf 50%, #00DDEB);
+  border: 0;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+}
+
+.aboutMebutton:hover {
+  transform: scale(1.1); 
+}
+
+.aboutMebutton::before {
+  content: '';
+  pointer-events: none;
+  opacity: 0.6;
+  background:
+    radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 60% 50%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
+    radial-gradient(circle at 30% 60%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
+    radial-gradient(circle at 70% 40%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+  
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  animation: bubbles 2.5s linear infinite both; 
+}
+
+.aboutMebutton span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.aboutMebutton:hover span {
+  background: none;
 }
