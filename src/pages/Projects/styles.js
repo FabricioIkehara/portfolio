@@ -75,7 +75,7 @@ export const ProjectDescription = styled.p`
 `;
 
 export const ProjectThumbnail = styled.img`
-  width: 150px; /* Tamanho da thumbnail */
+  width: 150px; 
   height: 150px;
   border-radius: 8px;
   object-fit: cover;
@@ -104,8 +104,8 @@ export const PageTitle = styled.h1`
   margin-bottom: 20px;
   z-index: 2;
   color: #ffffff; /* Cor do texto */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
-  transition: all 0.3s ease; /* Transição suave para hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease; 
 
   &:hover {
     color:rgb(17, 149, 158); /* Muda a cor do texto ao passar o mouse */
@@ -128,4 +128,51 @@ export const PageTitle = styled.h1`
 
   /* Aplicar animação de pulsação */
   animation: pulse 2s infinite ease-in-out;
+`;
+
+export const TechButton = styled.span`
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1); // Borda sutil
+  border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.3); // Cinza claro e transparente
+  font-size: 0.9em;
+  color: #333;
+  cursor: default; // Para garantir que o cursor não mude para um ponteiro
+  transition: transform 0.2s ease, background-color 0.2s ease; // Transição suave
+
+  &:hover {
+    transform: scale(1.05); // Efeito de scale pequeno
+    background-color: rgb(243, 236, 236); // Aumenta levemente a opacidade ao passar o mouse
+  }
+`;
+
+
+export const FooterText = styled.p`
+  text-align: center; // Centraliza o texto
+  font-family: inherit; // Usa a mesma fonte do título
+  font-size: 0.8em; // Fonte menor
+  font-weight: bold; // Texto em negrito
+  color: rgb(243, 236, 236); 
+  margin-top: 20px; // Espaçamento acima do texto
+  margin-bottom: 20px; // Espaçamento abaixo do texto
+`;
+
+export const HomeButton = styled.a`
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Espaçamento acima do botão */
+  cursor: pointer; /* Muda o cursor para pointer */
+
+  &:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+  }
 `;
