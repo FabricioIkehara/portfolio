@@ -10,7 +10,6 @@ import thumb4 from '../../assets/softcar.jpg';
 import thumb5 from '../../assets/sheets.jpg';
 import thumb6 from '../../assets/comingsoon.jpg';
 
-
 const projects = [
   {
     title: 'Nutrição Que Inspira',
@@ -21,28 +20,28 @@ const projects = [
   },
   {
     title: 'CRUD em PHP',
-    description: 'Um Crud em PHP, com uma lista de corretores cadastrados.',
+    description: 'A CRUD in PHP with a list of registered brokers.',
     thumbnail: thumb2, 
     link: 'https://www.youtube.com/watch?v=D5ngTk3t24A',
     technologies: ['PHP', 'MySQL', 'Bootstrap']
   },
   {
     title: 'Pokemon TCG',
-    description: 'Consumo de API de Cards de Pokemon TCG, com paginação e visualização de detalhes.',
+    description: 'Consumption of the Pokemon TCG Card API, with pagination and detailed view.',
     thumbnail: thumb3,
     link: 'https://fabricioikehara.github.io/pokemontcg/',
     technologies: ['Angular', 'API', 'CSS']
   },
   {
     title: 'Soft-Car',
-    description: 'Uma aplicação em Python e Angular, para controle de ordens de serviços automotivos.',
+    description: 'An application in Python and Angular for managing automotive service orders.',
     thumbnail: thumb4, 
     link: 'https://www.youtube.com/watch?v=fams89rSA6o',
     technologies: ['Python', 'Angular', 'Django']
   },
   {
     title: 'CSV para Google Sheets',
-    description: 'Um projeto em Python para importar um arquivo CSV para uma planilha do Google Sheets.',
+    description: 'A Python project to import a CSV file into a Google Sheets spreadsheet.',
     thumbnail: thumb5, 
     link: 'https://github.com/FabricioIkehara/csv-sheets',
     technologies: ['Python', 'Google Sheets API', 'Django']
@@ -83,10 +82,12 @@ const Projects = () => {
           </ProjectCard>
         ))}
       </div>
-      <FooterText>
+      <div className="footer-section">
+        <FooterText>
           Some projects do not have the back-end hosted, so I opted for video presentations.
         </FooterText>
         <HomeButton href="/">Back to Home</HomeButton>
+      </div>
     </ProjectsContainer>
   );
 };

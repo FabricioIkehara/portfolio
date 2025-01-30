@@ -25,6 +25,15 @@ export const ProjectsContainer = styled.div`
     width: 80%;
     max-width: 1200px;
     z-index: 2;
+    margin-bottom: 40px; /* Adiciona espaço abaixo do grid */
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    padding: 20px 0; /* Adiciona um pouco de padding */
+    z-index: 2;
   }
 `;
 
@@ -160,19 +169,62 @@ export const FooterText = styled.p`
 `;
 
 export const HomeButton = styled.a`
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: #FFF;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin-top: 20px; /* Espaçamento acima do botão */
-  cursor: pointer; /* Muda o cursor para pointer */
+  position: relative;
+  padding: 10px 40px;
+  border: 1px solid rgb(253, 252, 252);
+  background: var(--btn-color); /* Cor de fundo azul */
+  cursor: pointer;
+  
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: var(--text-color);
+  
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: transform 0.3s ease-in-out;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  display: inline-block; /* Mantém o comportamento de botão */
+  text-align: center; /* Centraliza o texto */
 
   &:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
+    transform: scale(1.1); 
+  }
+
+  &::before {
+    content: '';
+    pointer-events: none;
+    opacity: 0.6;
+    background:
+      radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 60% 50%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
+      radial-gradient(circle at 30% 60%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
+      radial-gradient(circle at 70% 40%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+    
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    animation: bubbles 2.5s linear infinite both; 
+  }
+
+  @keyframes bubbles {
+    from {
+      transform: translate();
+    }
+    to {
+      transform: translate(0, -66.666%);
+    }
   }
 `;
