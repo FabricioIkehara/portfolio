@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ProjectsContainer, ProjectCard, ProjectTitle, 
   ProjectDescription, ProjectThumbnail, BackgroundImage, 
-  PageTitle, TechButton, FooterText, HomeButton } from './styles';
+  PageTitle, TechButton, FooterText, HomeButton } from './styles.js';
 import projectsImage from '../../assets/projects.jpg';
 import thumb1 from '../../assets/nutricao.jpg';
 import thumb2 from '../../assets/crudphp.jpg';
@@ -56,6 +56,10 @@ const projects = [
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ProjectsContainer>
       <BackgroundImage src={projectsImage} alt="Projects Background" />
@@ -86,7 +90,7 @@ const Projects = () => {
         <FooterText>
           Some projects do not have the back-end hosted, so I opted for video presentations.
         </FooterText>
-        <HomeButton href="/">Back to Home</HomeButton>
+        <HomeButton to="/">Back to Home</HomeButton>
       </div>
     </ProjectsContainer>
   );

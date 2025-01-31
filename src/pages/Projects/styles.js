@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ProjectsContainer = styled.div`
   display: flex;
@@ -168,7 +169,8 @@ export const FooterText = styled.p`
   margin-bottom: 20px; // Espaçamento abaixo do texto
 `;
 
-export const HomeButton = styled.a`
+
+export const HomeButton = styled(Link)`
   position: relative;
   padding: 10px 40px;
   border: 1px solid rgb(253, 252, 252);

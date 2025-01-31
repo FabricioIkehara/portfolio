@@ -389,7 +389,7 @@ p:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 
   /* Adicione o gradiente e efeitos específicos */
-  background-image: linear-gradient(144deg, #191ea8, #361cdf 50%, #00DDEB);
+  background-image: linear-gradient(144deg, #42459c, #2d17a8d5 50%, #00DDEB);
   border: 0;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
 }

@@ -21,6 +21,7 @@ import javaLogo from './assets/java-logo.png';
 import mongodbLogo from './assets/mongodb-logo.png';
 import mysqlLogo from './assets/mysql-logo.png';
 import Projects from './pages/Projects/index.js';
+import About from './pages/About/index.js';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
@@ -93,23 +94,6 @@ const Section = styled.section`
 const SkyOceanSection = styled(Section)`
   background-image: url(${skyOceanImage});
   text-align: left;
-`;
-
-const ProjectsButton = styled.button`
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-family: 'Luckiest Guy', serif;
-  font-size: 24px;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 `;
 
 const OceanSection = styled(Section)`
@@ -223,27 +207,27 @@ const HomePage = () => {
         </RightContainer>
       </SkyOceanSection>
       <OceanSection>
-          <div className="section-container">
-            <div className="left-section">
-              <h2>My Projects</h2>
-              <button
-                className="custom-button" // Classe CSS para o botão Projects
-                onClick={() => navigate('/projects')}
-              >
-                Projects
-              </button>
-            </div>
-            <div className="right-section">
-              <h2>About Me</h2>
-              <button
-                className="aboutMebutton"
-                onClick={() => navigate('/about')}
-              >
-                About Me
-              </button>
-            </div>
+        <div className="section-container">
+          <div className="left-section">
+            <h2>My Projects</h2>
+            <button
+              className="custom-button" 
+              onClick={() => navigate('/projects')}
+            >
+              Projects
+            </button>
           </div>
-</OceanSection>
+          <div className="right-section">
+            <h2>About Me</h2>
+            <button
+              className="aboutMebutton"
+              onClick={() => navigate('/about')}
+            >
+              About Me
+            </button>
+          </div>
+        </div>
+      </OceanSection>
       <OceanFloorSection>
         <h2>Ocean Floor</h2>
         <p>This is the ocean floor section.</p>
@@ -252,15 +236,16 @@ const HomePage = () => {
   );
 }
 
-const App = () => {
+const MainApp = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
-}
+};
 
-export default App;
+export default MainApp;
