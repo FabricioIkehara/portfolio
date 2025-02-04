@@ -13,33 +13,40 @@ export const ProjectsContainer = styled.div`
   z-index: 1;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     z-index: 2;
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
   }
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    grid-template-rows: repeat(3, 1fr); /* 3 linhas */
-    gap: 20px; /* Espaçamento entre os itens */
-    width: 80%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 95%;
     max-width: 1200px;
     z-index: 2;
-    margin-bottom: 40px; /* Adiciona espaço abaixo do grid */
+    margin-bottom: 40px;
+
+    @media (min-width: 769px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .footer-section {
     width: 100%;
     text-align: center;
-    margin-top: auto; /* Empurra o rodapé para o final da página */
-    padding: 20px 0; /* Adiciona um pouco de padding */
+    margin-top: auto;
+    padding: 20px 0;
     z-index: 2;
   }
 `;
 
 export const ProjectCard = styled.div`
-  background-color: rgba(30, 26, 37, 0.3); /* Transparente com 70% de opacidade */
+  background-color: rgba(30, 26, 37, 0.3);
   padding: 20px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -54,11 +61,15 @@ export const ProjectCard = styled.div`
   .project-content {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espaçamento entre o texto e a thumbnail */
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .project-text {
-    flex: 1; /* Ocupa o espaço restante */
+    flex: 1;
   }
 
   a {
@@ -75,25 +86,38 @@ export const ProjectCard = styled.div`
 `;
 
 export const ProjectTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
+
+  @media (min-width: 769px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ProjectDescription = styled.p`
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #ccc;
+
+  @media (min-width: 769px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ProjectThumbnail = styled.img`
-  width: 150px; 
-  height: 150px;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
 
+  @media (min-width: 769px) {
+    width: 150px;
+    height: 150px;
+  }
+
   &:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.05);
   }
 `;
 
@@ -110,33 +134,33 @@ export const BackgroundImage = styled.img`
 
 export const PageTitle = styled.h1`
   font-family: 'Luckiest Guy', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   z-index: 2;
-  color: #ffffff; /* Cor do texto */
+  color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
+
+  @media (min-width: 769px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    animation: none;
+  }
 
   &:hover {
-    color:rgb(17, 149, 158); /* Muda a cor do texto ao passar o mouse */
-    text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB, 0 0 30px #00DDEB; /* Efeito de neon */
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
+    color: rgb(17, 149, 158);
+    text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB, 0 0 30px #00DDEB;
+    transform: scale(1.05);
   }
 
-  /* Efeito de pulsação (opcional) */
   @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
   }
 
-  /* Aplicar animação de pulsação */
   animation: pulse 2s infinite ease-in-out;
 `;
 
@@ -144,58 +168,62 @@ export const TechButton = styled.span`
   display: inline-block;
   margin: 5px;
   padding: 5px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1); // Borda sutil
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  background-color: rgba(200, 200, 200, 0.3); // Cinza claro e transparente
+  background-color: rgba(200, 200, 200, 0.3);
   font-size: 0.9em;
   color: #333;
-  cursor: default; // Para garantir que o cursor não mude para um ponteiro
-  transition: transform 0.2s ease, background-color 0.2s ease; // Transição suave
+  cursor: default;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  @media (max-width: 480px) {
+    font-size: 0.8em;
+    padding: 4px 8px;
+  }
 
   &:hover {
-    transform: scale(1.05); // Efeito de scale pequeno
-    background-color: rgb(243, 236, 236); // Aumenta levemente a opacidade ao passar o mouse
+    transform: scale(1.05);
+    background-color: rgb(243, 236, 236);
   }
 `;
 
-
 export const FooterText = styled.p`
-  text-align: center; // Centraliza o texto
-  font-family: inherit; // Usa a mesma fonte do título
-  font-size: 0.8em; // Fonte menor
-  font-weight: bold; // Texto em negrito
-  color: rgb(243, 236, 236); 
-  margin-top: 20px; // Espaçamento acima do texto
-  margin-bottom: 20px; // Espaçamento abaixo do texto
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: rgb(243, 236, 236);
+  margin: 20px 0;
 `;
-
 
 export const HomeButton = styled(Link)`
   position: relative;
-  padding: 10px 40px;
+  padding: 8px 32px;
   border: 1px solid rgb(253, 252, 252);
-  background: var(--btn-color); /* Cor de fundo azul */
+  background: var(--btn-color);
   cursor: pointer;
-  
   font-family: "Luckiest Guy", cursive;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 24px;
   color: var(--text-color);
-  
   box-shadow: var(--shadow-color) 2px 2px 22px;
   border-radius: 4px;
   overflow: hidden;
   white-space: nowrap;
   transition: transform 0.3s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
-  text-decoration: none; /* Remove o sublinhado padrão dos links */
-  display: inline-block; /* Mantém o comportamento de botão */
-  text-align: center; /* Centraliza o texto */
+  @media (min-width: 769px) {
+    font-size: 30px;
+    padding: 10px 40px;
+  }
 
   &:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
   }
 
   &::before {
@@ -211,22 +239,17 @@ export const HomeButton = styled(Link)`
       radial-gradient(circle at 60% 50%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
       radial-gradient(circle at 30% 60%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
       radial-gradient(circle at 70% 40%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
-    
     width: 100%;
     height: 300%;
     top: 0;
     left: 0;
     position: absolute;
     z-index: 1;
-    animation: bubbles 2.5s linear infinite both; 
+    animation: bubbles 2.5s linear infinite both;
   }
 
   @keyframes bubbles {
-    from {
-      transform: translate();
-    }
-    to {
-      transform: translate(0, -66.666%);
-    }
+    from { transform: translate(); }
+    to { transform: translate(0, -66.666%); }
   }
 `;

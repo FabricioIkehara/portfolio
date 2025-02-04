@@ -23,6 +23,11 @@ import mysqlLogo from './assets/mysql-logo.png';
 import Projects from './pages/Projects/index.js';
 import About from './pages/About/index.js';
 
+import insta from './assets/insta.png';
+import linkedin from './assets/linkedin.png';
+import whats from './assets/whats.png';
+import github from './assets/github.png';
+
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 `;
@@ -143,6 +148,19 @@ const HomePage = () => {
     };
   }, []);
 
+  // Adicionando o useEffect para o botão "voltar ao topo"
+  useEffect(() => {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  }, []);
+
   return (
     <div className="App">
       <GlobalStyle />
@@ -229,9 +247,31 @@ const HomePage = () => {
         </div>
       </OceanSection>
       <OceanFloorSection>
-        <h2>Ocean Floor</h2>
-        <p>This is the ocean floor section.</p>
-      </OceanFloorSection>
+          <h2>Contact</h2>
+          <p>Thank you so much for taking the time to read through my portfolio! Until the next wave! 🌊😊</p>
+          <div className="social-icons">
+            <a href="https://www.instagram.com/seuinstagram" target="_blank" rel="noopener noreferrer">
+              <img src={insta} alt="Instagram" />
+            </a>
+            <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" rel="noopener noreferrer">
+              <img src={linkedin} alt="LinkedIn" />
+            </a>
+            <a href="https://wa.me/seuwhatsapp" target="_blank" rel="noopener noreferrer">
+              <img src={whats} alt="WhatsApp" />
+            </a>
+            <a href="https://github.com/seugithub" target="_blank" rel="noopener noreferrer">
+              <img src={github} alt="GitHub" />
+            </a>
+          </div>
+          <div className="email">
+            <p>Email: <a href="mailto:fah.hiroshi@gmail.com">fah.hiroshi@gmail.com</a></p>
+          </div>
+          <div className="credits">
+            <p>Developed by <a href="https://github.com/fabricioikehara" target="_blank">@Fabricio Ikehara Inamine</a></p>
+          </div>
+          <button id="back-to-top" title="Voltar ao topo">↑</button>
+</OceanFloorSection>
+
     </div>
   );
 }
