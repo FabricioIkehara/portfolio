@@ -276,7 +276,7 @@ const HomePage = () => {
   );
 }
 
-const MainApp = () => {
+const App = () => {
   return (
     <Router>
       <Routes>
@@ -288,4 +288,4 @@ const MainApp = () => {
   );
 };
 
-export default MainApp;
+export default App;
