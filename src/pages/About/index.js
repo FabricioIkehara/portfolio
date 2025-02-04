@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importe o Link para usar no HomeButton
+
 import {
   AboutContainer,
   BackgroundImage,

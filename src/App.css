@@ -570,107 +570,116 @@ p:hover {
     width: 80%; /* Ajustar a largura dos botões */
     max-width: 300px; /* Largura máxima dos botões */
   }
+
+  .custom-carousel {
+    width: 350px;
+    height: 350px;
+    margin-top: 200px;
+    margin-left: -180px ;
+  }
 }
 
 @media (max-width: 768px) {
+  .custom-carousel {
+    width: 300px;
+    height: 300px;
+    margin-top: 180px;
+    margin-left: -80px ;
+  }
+  
   .title-container {
-    position: relative;
-    top: auto;
-    left: auto;
+    position: static;
     align-items: center;
     text-align: center;
-    margin: 20px;
+    margin: 20px 0;
   }
-
-  .custom-carousel {
-    position: static;
-    transform: none;
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    margin: 100px auto 20px auto; /* Adicionando uma margem superior maior */
-    order: 3; /* Garantindo que o carrossel fique abaixo das stacks */
-  }
-
+  
   .stacks-container {
-    justify-content: center;
     margin-left: 0;
-    order: 2; /* Garantindo que as stacks fiquem acima do carrossel */
-  }
-
-  .section-container {
-    flex-direction: column;
-  }
-
-  .left-section,
-  .right-section {
-    margin: 0 20px;
-    width: 90%;
-  }
-
-  .title {
-    font-size: 2.5em;
-  }
-
-  .subtitle {
-    font-size: 1.8em;
-    margin-top: 20px;
-  }
-
-  .about-me {
-    font-size: 1em;
-    margin-top: 20px;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .title {
-    font-size: 2em;
+  .custom-carousel {
+    width: 250px;
+    height: 250px;
+    margin-top: 250px;
+    margin-left: -70px;
   }
-
+  
+  .title {
+    font-size: 2.2em;
+  }
+  
   .subtitle {
     font-size: 1.5em;
   }
+  
+  .button-container {
+    gap: 20px;
+  }
+  
+  .projects-button,
+  .aboutMebutton {
+    width: 180px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  .custom-carousel {
+    width: 200px;
+    height: 200px;
+    margin-top: 250px;
+    margin-left: -60px;
+  }
+  
+  .title {
+    font-size: 1.8em;
+  }
+  
+  .subtitle {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 360px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0 5px !important; /* Redução de 40% no padding */
+  }
+
+  .title-container {
+    padding: 0 3px; /* Redução do padding lateral */
+  }
+
+  .title {
+    font-size: 1.2em !important;
+    margin-bottom: 1px !important; /* Espaço reduzido entre título e subtítulo */
+    line-height: 1.0;
+  }
+
+  .subtitle {
+    font-size: 1em !important;
+    margin-bottom: 1px !important; /* Espaço mínimo após subtítulo */
+    line-height: 1.0;
+  }
+
+  .about-me {
+    font-size: 0.75em !important;
+    margin-bottom: 4px !important; /* Redução de 50% no espaço */
+    line-height: 1.1;
+  }
+
+  .stacks-container {
+    margin: 4px 3px 8px !important; /* Margens reduzidas */
+    gap: 2px;
+  }
 
   .custom-carousel {
-    height: 250px;
-    margin-top: 150px; /* Adicionando uma margem superior maior */
+    margin-top: 120px;
+    width: 200px !important;
+    height: 200px !important;
   }
-
-  .stack-logo {
-    width: 35px;
-    height: 35px;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  h3 {
-    font-size: 1.5em;
-  }
-
-  .custom-button,
-  .aboutMebutton {
-    font-size: 1.2em;
-    padding: 8px 20px;
-  }
-}
-
-.header {
-  position: relative;
-  padding: 20px;
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stacks-and-carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import skyImage from './assets/sky.jpg';
 import skyOceanImage from './assets/sky-ocean.jpg';
@@ -230,7 +230,7 @@ const HomePage = () => {
             <h2>My Projects</h2>
             <button
               className="custom-button" 
-              onClick={() => navigate('/projects')}
+              onClick={() => navigate('#/projects')}
             >
               Projects
             </button>
@@ -287,5 +287,4 @@ const App = () => {
     </Router>
   );
 };
-
 export default App;
