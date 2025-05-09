@@ -250,16 +250,16 @@ const HomePage = () => {
           <h2>Contact</h2>
           <p>Thank you so much for taking the time to read through my portfolio! Until the next wave! 🌊😊</p>
           <div className="social-icons">
-            <a href="https://www.instagram.com/seuinstagram" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/fahhiroshi/" target="_blank" rel="noopener noreferrer">
               <img src={insta} alt="Instagram" />
             </a>
-            <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/fabricioikeharainamine/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://wa.me/seuwhatsapp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/+5511952115379" target="_blank" rel="noopener noreferrer">
               <img src={whats} alt="WhatsApp" />
             </a>
-            <a href="https://github.com/seugithub" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/FabricioIkehara" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
