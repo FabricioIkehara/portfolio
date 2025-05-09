@@ -230,7 +230,7 @@ const HomePage = () => {
             <h2>My Projects</h2>
             <button
               className="custom-button" 
-              onClick={() => navigate('#/projects')}
+              onClick={() => navigate('/projects')}
             >
               Projects
             </button>
