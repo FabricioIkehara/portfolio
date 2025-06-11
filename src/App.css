@@ -1,770 +1,356 @@
+/* App.css */
+
+/* Importação da fonte - Isso é bom manter aqui ou no GlobalStyle do Styled Components */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-.header {
-  background-image: url('./assets/sky.jpg');
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-}
-
-.title-container {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 3em;
-}
-
-.subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2em;
-}
-
-.about-me {
-  margin-top: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
-}
-
-.stacks-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-  margin-left: 40px; 
-}
-
-.stack-logo {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.stack-logo:hover {
-  transform: scale(1.2);
-}
-
-.custom-carousel {
-  margin-top: 40px;
-}
-
-.section {
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-  color: white;
-}
-
-.sky-ocean-section {
-  background-image: url('./assets/sky-ocean.jpg');
-  text-align: left;
-}
-
-.projects-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-family: 'Luckiest Guy', serif;
-  font-size: 24px;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.projects-button:hover {
-  transform: scale(1.1);
-}
-
-.ocean-section {
-  background-image: url('./assets/ocean.jpg');
-}
-
-.ocean-floor-section {
-  background-image: url('./assets/ocean-floor.jpg');
-}
-
-.content {
-  max-width: 800px;
-}
-
-.right-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.header {
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.title {
-  font-family: 'Luckiest Guy', serif;
-  font-size: 42px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-  letter-spacing: 1px;
-}
-
-.title:hover {
-  transform: scale(1.1);
-  color: #ffcc00;
-}
-
-.subtitle {
-  font-family: 'Luckiest Guy', serif;
-  font-size: 32px;
-  color: white;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-  margin-top: 50px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.subtitle:hover {
-  transform: scale(1.1);
-}
-
-.about-me {
-  font-family: 'Luckiest Guy', serif;
-  font-size: 18px;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  max-width: 600px;
-  line-height: 1.5;
-  margin-top: 40px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.about-me:hover {
-  transform: scale(1.1);
-}
-
-.custom-carousel {
-  position: absolute;
-  top: 55%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  height: 350px;
-  border: 1px solid white;
-}
-
-.custom-carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-}
-
-.section {
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-  color: white;
-}
-
-.sky-ocean-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: left;
-}
-
-.content {
-  max-width: 800px;
-  text-align: left;
-}
-
-.right-container {
-  margin-top: 20px;
-  align-self: center;
-  text-align: center;
-}
-
-h2 {
-  font-family: 'Luckiest Guy', serif;
-  font-size: 48px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease-in-out;
-}
-
-h2:hover {
-  transform: scale(1.1);
-}
-
-h3 {
-  font-family: 'Luckiest Guy', serif;
-  font-size: 36px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease-in-out;
-}
-
-h3:hover {
-  transform: scale(1.1);
-}
-
-p {
-  font-family: 'Luckiest Guy', serif;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease-in-out;
-}
-
-p:hover {
-  transform: scale(1.05);
-}
-
-.ProjectsSection {
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.ProjectsSection h2 {
-  font-family: 'Luckiest Guy', serif;
-  font-size: 48px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-
-.custom-button {
-  position: relative;
-  padding: 10px 40px;
-  border: 1px solid rgb(253, 252, 252);
-  background: var(--btn-color); /* Cor de fundo azul */
-  cursor: pointer;
-  
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 30px;
-  color: var(--text-color);
-  
-  box-shadow: var(--shadow-color) 2px 2px 22px;
-  border-radius: 4px;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: transform 0.3s ease-in-out;
-
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
-}
-
-.custom-button:hover {
-  transform: scale(1.1); 
-}
-
-.custom-button::before {
-  content: '';
-  pointer-events: none;
-  opacity: 0.6;
-  background:
-    radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 60% 50%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
-    radial-gradient(circle at 30% 60%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
-    radial-gradient(circle at 70% 40%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
-  
-  width: 100%;
-  height: 300%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 1;
-  animation: bubbles 2.5s linear infinite both; 
-}
-
-@keyframes bubbles {
-  from {
-    transform: translate();
-  }
-  to {
-    transform: translate(0, -66.666%);
-  }
-}
-
-:root {
-  --text-color: hsla(210, 50%, 85%, 1);
-  --shadow-color: hsla(210, 40%, 52%, .4);
-  --btn-color: hsl(210, 80%, 42%);
-  --bg-color: #6242a1;
-}
-
-
-.section-container {
-  display: flex; 
-  justify-content: center;
-  align-items: flex-start; /* Alinha os itens ao topo */
-  width: 100%; /* Ocupa toda a largura disponível */
-}
-
-.left-section {
-  flex: 1; /* Ocupa metade do espaço disponível */
-  margin-left: 20%; /* Margem à esquerda */
-  display: flex; /* Ativa o Flexbox */
-  flex-direction: column; /* Organiza os itens em coluna (um embaixo do outro) */
-  align-items: flex-start; /* Alinha os itens à esquerda */
-  justify-content: center; 
-}
-
-
-.right-section {
-  flex: 1; /* Ocupa metade do espaço disponível */
-  margin-right: 10%; /* Margem à direita */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.aboutMebutton {
-  
-  position: relative;
-  padding: 10px 40px;
-  border: 1px solid rgb(253, 252, 252);
-  background: var(--btn-color); /* Cor de fundo azul */
-  cursor: pointer;
-  
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 30px;
-  color: var(--text-color);
-  
-  box-shadow: var(--shadow-color) 2px 2px 22px;
-  border-radius: 4px;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: transform 0.3s ease-in-out;
 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
-
-  /* Adicione o gradiente e efeitos específicos */
-  background-image: linear-gradient(144deg, #42459c, #2d17a8d5 50%, #00DDEB);
-  border: 0;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-}
-
-.aboutMebutton:hover {
-  transform: scale(1.1); 
-}
-
-.aboutMebutton::before {
-  content: '';
-  pointer-events: none;
-  opacity: 0.6;
-  background:
-    radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-    radial-gradient(circle at 60% 50%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
-    radial-gradient(circle at 30% 60%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px),
-    radial-gradient(circle at 70% 40%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
-  
-  width: 100%;
-  height: 300%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 1;
-  animation: bubbles 2.5s linear infinite both; 
-}
-
-.aboutMebutton span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-}
-
-.aboutMebutton:hover span {
-  background: none;
-}
-
-.OceanFloorSection {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-.OceanFloorSection h2 {
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.OceanFloorSection p {
-  margin-bottom: 20px;
-  font-size: 14px;
-  max-width: 600px; 
-  margin-left: auto;
-  margin-right: auto;
-  word-wrap: break-word;
-}
-
-.social-icons {
-  margin-bottom: 20px;
+/* Estilos globais básicos para evitar margens e overflow, se não estiverem no GlobalStyle */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Garante que não haja barra de rolagem horizontal indesejada */
 }
-
-.social-icons a {
-  margin: 0 10px;
-  display: inline-block;
-}
-
-.social-icons img {
-  width: 30px;
-  height: 30px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons img:hover {
-  opacity: 0.7;
-  transform: scale(1.1); /* Corrigido para "transform" */
-}
-
-.email a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.email a:hover {
-  text-decoration: underline;
-}
-
-.credits {
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-.credits a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.credits a:hover {
-  text-decoration: underline;
-}
-
-
 
+/* Regras para o botão "voltar ao topo" que não é um Styled Component */
 #back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff; /* Tom azulado */
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 60px; /* Aumentando o tamanho */
-  height: 60px; /* Aumentando o tamanho */
-  font-size: 24px; /* Aumentando o tamanho da fonte */
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Tom azulado */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Aumentando o tamanho */
+    height: 60px; /* Aumentando o tamanho */
+    font-size: 24px; /* Aumentando o tamanho da fonte */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* Para o efeito de bolhas */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
 #back-to-top:hover {
-  background-color: #0056b3;
-  transform: scale(1.1);
+    background-color: #0056b3;
+    transform: scale(1.1);
 }
 
+/* Efeito de bolhas para o botão de voltar ao topo */
 #back-to-top::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
-    radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
-    radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
-    radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
-    radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px);
-  background-size: cover;
-  z-index: 1;
-  opacity: 0.6;
-  animation: bubbles 2.5s linear infinite both;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 10% 20%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
+        radial-gradient(circle at 80% 30%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
+        radial-gradient(circle at 50% 10%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
+        radial-gradient(circle at 20% 70%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px),
+        radial-gradient(circle at 90% 80%, transparent 0, transparent 2px, #fff 3px, #fff 4px, transparent 4px);
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.6;
+    animation: bubbles 2.5s linear infinite both;
 }
 
 @keyframes bubbles {
-  from {
-    transform: translate(-50%, -50%) translateY(0);
-  }
-  to {
-    transform: translate(-50%, -50%) translateY(-100%);
-  }
+    from {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    to {
+        transform: translate(-50%, -50%) translateY(-100%);
+    }
 }
+
+/* Definição de variáveis CSS para os botões customizados (se eles usarem classes CSS diretamente) */
+:root {
+    --text-color: hsla(210, 50%, 85%, 1);
+    --shadow-color: hsla(210, 40%, 52%, .4);
+    --btn-color: hsl(210, 80%, 42%);
+    --bg-color: #6242a1; /* Essa variável não está sendo usada no seu App.js, então pode ser removida se não for usada em outro lugar. */
+}
+
+/* Estilos para .social-icons, .email, .credits (se eles não forem Styled Components) */
+.social-icons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adicionado um gap para espaçamento entre os ícones */
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px; /* Aumentado um pouco para visibilidade */
+    height: 40px; /* Aumentado um pouco para visibilidade */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+.email {
+    margin-bottom: 10px;
+}
+
+.email a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif; /* Usando a fonte importada */
+}
+
+.email a:hover {
+    text-decoration: underline;
+}
+
+.credits {
+    font-size: 14px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif; /* Usando a fonte importada */
+}
+
+.credits a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Medias Queries: Ajuste conforme o App.js já está lidando com eles */
+/* Mantenha apenas as media queries que aplicam estilos a elementos que não são styled components
+   ou que são para classes que você *ainda* usa no HTML diretamente.
+   Muitos dos estilos aqui deveriam ser tratados diretamente nos Styled Components com a lógica de `@media`. */
 
 @media (max-width: 895px) {
-  /* Reset para eliminar margem branca */
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-  }
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
 
-  .section-container {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 15px;
-    box-sizing: border-box;
-  }
+    .section-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
 
-  .custom-carousel {
-    width: 300px !important;
-    height: 300px !important;
-    margin-top: 610px;
-    position: relative;
-    left: 10%;
-    display: block;
-  }
+    /* Estes estilos para custom-carousel, left-section, right-section, custom-button, aboutMebutton
+       deveriam estar nos seus Styled Components com `@media` */
+    .custom-carousel {
+        width: 300px !important;
+        height: 300px !important;
+        margin-top: 610px;
+        position: relative;
+        left: 10%;
+        display: block;
+    }
 
-  .left-section,
-  .right-section {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-    margin-bottom: 25px;
-    padding: 0 10px;
-  }
+    .left-section,
+    .right-section {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
 
-  .custom-button,
-  .aboutMebutton {
-    width: 90%;
-    max-width: 280px;
-    margin: 0 auto;
-  }
+    .custom-button,
+    .aboutMebutton {
+        width: 90%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
 
-  /* Ajustes finais de alinhamento */
-  .title-container {
-    padding: 0 20px;
-  }
+    .title-container {
+        padding: 0 20px;
+    }
 
-  .stacks-container {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    .stacks-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 @media (max-width: 768px) {
-  .custom-carousel {
-    width: 200px !important;
-    height: 200px !important;
-    margin-top: 620px;
-    position: relative;
-    left: 35%;
-    display: block; /* Garante o fluxo normal */
-  }
+    /* Estes estilos para custom-carousel, title-container, stacks-container, title, subtitle
+       deveriam estar nos seus Styled Components com `@media` */
+    .custom-carousel {
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 620px;
+        position: relative;
+        left: 35%;
+        display: block;
+    }
 
-  .title-container {
-    margin: 15px 0 20px !important; /* Espaço abaixo do container */
-    padding: 0 15px;
-  }
+    .title-container {
+        margin: 15px 0 20px !important;
+        padding: 0 15px;
+    }
 
-  .stacks-container {
-    gap: 8px; /* Reduz espaço entre ícones */
-    margin-bottom: 25px !important; /* Espaço antes do carrossel */
-  }
+    .stacks-container {
+        gap: 8px;
+        margin-bottom: 25px !important;
+    }
 
-  /* Ajuste de tamanhos para melhor hierarquia */
-  .title {
-    font-size: 1.8em !important;
-    margin-bottom: 8px !important;
-  }
+    .title {
+        font-size: 1.8em !important;
+        margin-bottom: 8px !important;
+    }
 
-  .subtitle {
-    font-size: 1.4em !important;
-    margin-bottom: 12px !important;
-  }
+    .subtitle {
+        font-size: 1.4em !important;
+        margin-bottom: 12px !important;
+    }
 }
 
 @media (max-width: 480px) {
-  .custom-carousel {
-    width: 200px !important;
-    height: 200px !important;
-    margin-top: 620px;
-    left: 30%;
-    position: relative;
-  }
+    /* Estes estilos para custom-carousel, title, subtitle, button-container, projects-button, aboutMebutton,
+       header, stacks-container, stack-logo deveriam estar nos seus Styled Components com `@media` */
+    .custom-carousel {
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 620px;
+        left: 30%;
+        position: relative;
+    }
 
-  .title {
-    font-size: 1.4em !important;
-    margin-bottom: 4px !important;
-  }
+    .title {
+        font-size: 1.4em !important;
+        margin-bottom: 4px !important;
+    }
 
-  .subtitle {
-    font-size: 1em !important;
-    margin-bottom: 6px !important;
-  }
+    .subtitle {
+        font-size: 1em !important;
+        margin-bottom: 6px !important;
+    }
 
-  .button-container {
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .button-container {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-  .projects-button,
-  .aboutMebutton {
-    width: 140px !important;
-    font-size: 16px !important;
-    padding: 8px 12px;
-    margin: 0 4px;
-  }
+    .projects-button,
+    .aboutMebutton {
+        width: 140px !important;
+        font-size: 16px !important;
+        padding: 8px 12px;
+        margin: 0 4px;
+    }
 
-  /* Ajuste adicional para alinhamento */
-  .header {
-    padding-bottom: 80px !important;
-  }
+    .header {
+        padding-bottom: 80px !important;
+    }
 
-  .stacks-container {
-    margin: 8px 0 !important;
-    gap: 4px;
-  }
+    .stacks-container {
+        margin: 8px 0 !important;
+        gap: 4px;
+    }
 
-  .stack-logo {
-    width: 28px !important;
-    height: 28px !important;
-  }
+    .stack-logo {
+        width: 28px !important;
+        height: 28px !important;
+    }
 }
 
 @media (max-width: 390px) {
-  .custom-carousel {
-    width: 200px;
-    height: 200px;
-    margin-top: 670px;
-    margin-left: -60px;
-  }
-  
-  .title {
-    font-size: 1.8em;
-  }
-  
-  .subtitle {
-    font-size: 1.2em;
-  }
-}
-@media (max-width: 375px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    padding: 3px 0 5px !important; /* Redução de 40% no padding */
-  }
-
-  .title-container {
-    padding: 0 3px; /* Redução do padding lateral */
-  }
-
-  .title {
-    font-size: 1.2em !important;
-    margin-bottom: 1px !important; /* Espaço reduzido entre título e subtítulo */
-    line-height: 1.0;
-  }
-
-  .subtitle {
-    font-size: 1em !important;
-    margin-bottom: 1px !important; /* Espaço mínimo após subtítulo */
-    line-height: 1.0;
-  }
-
-  .about-me {
-    font-size: 0.75em !important;
-    margin-bottom: 4px !important; /* Redução de 50% no espaço */
-    line-height: 1.1;
-  }
-
-  .stacks-container {
-    margin: 4px 3px 8px !important; /* Margens reduzidas */
-    gap: 2px;
-  }
-
-  .custom-carousel {
-    margin-top: 120px;
-    width: 200px !important;
-    height: 200px !important;
-  }
-  @media (max-width: 375px) {
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .header {
-      width: 100%;
-      max-width: 100vw;
-      box-sizing: border-box;
-      overflow: hidden;
-      padding: 3px 0 5px !important;
-    }
-  
-    .title-container {
-      width: calc(100% - 6px); /* Compensa o padding */
-      padding: 0 3px;
+    /* Estes estilos para custom-carousel, title, subtitle deveriam estar nos seus Styled Components com `@media` */
+    .custom-carousel {
+        width: 200px;
+        height: 200px;
+        margin-top: 670px;
+        margin-left: -60px;
     }
     
-
-    * {
-      max-width: 100%;
-      box-sizing: border-box;
+    .title {
+        font-size: 1.8em;
     }
-  }
+    
+    .subtitle {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 375px) {
+    /* Estes estilos para header, title-container, title, subtitle, about-me, stacks-container, custom-carousel
+       deveriam estar nos seus Styled Components com `@media` */
+    .header {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 0 5px !important;
+    }
+
+    .title-container {
+        padding: 0 3px;
+    }
+
+    .title {
+        font-size: 1.2em !important;
+        margin-bottom: 1px !important;
+        line-height: 1.0;
+    }
+
+    .subtitle {
+        font-size: 1em !important;
+        margin-bottom: 1px !important;
+        line-height: 1.0;
+    }
+
+    .about-me {
+        font-size: 0.75em !important;
+        margin-bottom: 4px !important;
+        line-height: 1.1;
+    }
+
+    .stacks-container {
+        margin: 4px 3px 8px !important;
+        gap: 2px;
+    }
+
+    .custom-carousel {
+        margin-top: 120px;
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
+    /* Regras específicas para html, body no 375px */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 3px 0 5px !important;
+    }
+    
+    .title-container {
+        width: calc(100% - 6px);
+        padding: 0 3px;
+    }
+    
+    /* O seletor universal com max-width e box-sizing aqui pode ser problemático se usado em conjunto com Styled Components.
+       Se Styled Components já está definindo essas propriedades, pode haver conflito. */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
