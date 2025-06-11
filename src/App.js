@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import './App.css'; // Mantenha seu CSS original se tiver outros estilos importantes aqui
-import MenuBar from './components/menu-bar.jsx';
+import { HashRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import './App.css';
 
-// Importe suas imagens do carrossel aqui. Certifique-se de que são quadradas ou serão cortadas.
+// Caminho de importação do MenuBar atualizado e mais explícito.
+import MenuBar from './components/MenuBar/menu-bar.jsx'; 
+
+// Importe seus logos aqui
 import c1 from './assets/c1.png';
 import c2 from './assets/c2.png';
 import c3 from './assets/c3.png';
 import c4 from './assets/c4.png';
-
-// Importe os logos das tecnologias
 import htmlLogo from './assets/html-logo.png';
 import cssLogo from './assets/css-logo.png';
-import jsLogo from './assets/js-logo.png';
+import jsLogo from './assets/js-logo.png'; // Verifique a extensão se for .jsx
 import reactLogo from './assets/react-logo.png';
 import angularLogo from './assets/angular-logo.png';
 import phpLogo from './assets/php-logo.png';
@@ -22,9 +22,11 @@ import javaLogo from './assets/java-logo.png';
 import mongodbLogo from './assets/mongodb-logo.png';
 import mysqlLogo from './assets/mysql-logo.png';
 
-// Importe as páginas e ícones sociais
-import Projects from './pages/Projects/index.js';
-import About from './pages/About/index.js';
+// Importe as páginas
+import Projects from './pages/Projects/index.jsx'; 
+import About from './pages/About/index.jsx'; // Mantido .jsx conforme sua última indicação
+
+// Importe os ícones sociais
 import insta from './assets/insta.png';
 import linkedin from './assets/linkedin.png';
 import whats from './assets/whats.png';
@@ -63,20 +65,37 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    /* Estilos para os ícones sociais */
+    /* Ajustes para os ícones sociais no rodapé */
     .social-icons {
         display: flex;
-        gap: 20px;
-        margin-top: 30px;
+        justify-content: center;
+        gap: 30px; /* Espaçamento entre os ícones */
+        margin-top: 30px; /* Mais espaço acima */
+        margin-bottom: 20px;
+
+        @media (max-width: 600px) {
+            gap: 20px;
+        }
     }
 
     .social-icons img {
-        width: 50px;
-        height: 50px;
-        transition: transform 0.3s ease-in-out;
+        width: 60px; /* Tamanho um pouco maior para os ícones */
+        height: 60px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: grayscale(80%); /* Deixa os ícones mais sutis */
+        opacity: 0.8;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra sutil */
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
+            filter: grayscale(0%); /* Colore no hover */
+            opacity: 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra mais intensa no hover */
+        }
+
+        @media (max-width: 600px) {
+            width: 50px;
+            height: 50px;
         }
     }
 
@@ -132,18 +151,33 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    /* Estilos para email e créditos */
-    .email, .credits {
-        margin-top: 20px;
+    /* Estilos para email e créditos no rodapé */
+    .email {
+        margin-top: 10px; /* Ajuste para não ter muita margem superior */
+        margin-bottom: 15px; /* Espaço antes dos créditos */
+        font-size: 1.1em; /* Tamanho da fonte ligeiramente maior */
+        color: #e0e0e0; /* Cor mais clara */
+        text-align: center;
+    }
+    .email a {
+        color: #00DDEB; /* Cor de destaque para o email */
+        text-decoration: none;
+        font-weight: bold;
+        transition: text-decoration 0.2s ease;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .credits {
+        margin-top: 0; /* Remove margem superior extra */
         font-size: 0.9em;
         color: #cccccc;
         text-align: center;
     }
-
-    .email a, .credits a {
+    .credits a {
         color: #007bff;
         text-decoration: none;
-
         &:hover {
             text-decoration: underline;
         }
@@ -154,7 +188,6 @@ const GlobalStyle = createGlobalStyle`
 const Header = styled.header.attrs(() => ({
     className: 'header',
 }))`
-    /* Revertido o gradiente para o background do Header */
     background: linear-gradient(to bottom, #000000 0%, #001a33 100%);
     min-height: 100vh;
     display: flex;
@@ -167,6 +200,7 @@ const Header = styled.header.attrs(() => ({
     overflow: hidden;
     margin-bottom: 0;
     padding-bottom: 0;
+    padding-top: 80px; /* Adiciona padding para evitar que o conteúdo fique atrás do menu fixo */
 `;
 
 // Novo container para o conteúdo principal da "hero section" (texto + carrossel)
@@ -189,8 +223,6 @@ const HeroContentContainer = styled.div`
 
 // TitleContainer ajustado para o novo layout flex
 const TitleContainer = styled.div`
-    /* Removido position: absolute para integrar no flexbox */
-    /* Mantém alinhamento à esquerda para desktop, centraliza para mobile */
     flex: 1; /* Permite que ocupe o espaço disponível */
     padding: 20px; /* Espaçamento interno */
     text-align: center; /* Centraliza texto em mobile */
@@ -335,18 +367,61 @@ const Section = styled.section`
 `;
 
 const SkyOceanSection = styled(Section)`
-    /* Mantido o gradiente original para esta seção */
     background: linear-gradient(to bottom, #001a33 0%, #003366 100%);
 `;
 
 const OceanSection = styled(Section)`
-    /* Mantido o gradiente original para esta seção */
     background: linear-gradient(to bottom, #003366, #0056b3);
 `;
 
 const OceanFloorSection = styled(Section)`
-    /* Mantido o gradiente original para esta seção */
     background: linear-gradient(to bottom, #0056b3, #66b2ff);
+    padding-top: 80px; /* Garante que o conteúdo não fique atrás do menu fixo */
+    padding-bottom: 80px; /* Adiciona mais espaço na parte inferior */
+
+    /* Estilo para o título da seção de Contato */
+    h2 {
+        font-family: 'Luckiest Guy', serif; /* Mantido o estilo de fonte */
+        font-size: 2.8rem; /* Aumentado para mais impacto */
+        
+        margin-top: 80px;
+        z-index: 2;
+        color: #ffffff;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra mais forte */
+        transition: all 0.4s ease; /* Transição mais suave */
+        animation: pulse 3s infinite ease-in-out; /* Velocidade da animação ajustada */
+
+        @media (min-width: 769px) {
+            font-size: 3.5rem;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 2.2rem;
+            animation: none; /* Remove a animação em telas pequenas, se preferir */
+        }
+
+        &:hover {
+            color: rgb(0, 221, 235); /* Manteve a cor de hover que você tinha */
+            text-shadow: 0 0 15px #00DDEB, 0 0 30px #00DDEB, 0 0 45px #00DDEB; /* Efeito de brilho */
+            transform: scale(1.07);
+        }
+
+        /* Keyframes de pulso movidos para cá para garantir que "Luckiest Guy" esteja disponível */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); } /* Pulsa um pouco mais */
+            100% { transform: scale(1); }
+        }
+    }
+
+    /* Estilo para o parágrafo de agradecimento */
+    p {
+        font-size: 1.2em; /* Ligeiramente maior */
+        line-height: 1.7;
+        max-width: 700px;
+        margin-bottom: 40px; /* Mais espaço antes dos ícones sociais */
+        color: #e0e0e0; /* Cor mais clara */
+    }
 `;
 
 const Content = styled.div`
@@ -369,6 +444,26 @@ const RightContainer = styled.div.attrs(() => ({
 
 const HomePage = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const contactSectionRef = useRef(null); 
+
+    useEffect(() => {
+        const handleAnchorScroll = () => {
+            if (location.pathname === '/' && location.hash) {
+                const id = location.hash.replace('#', '');
+                if (id === 'contact-section' && contactSectionRef.current) {
+                    setTimeout(() => {
+                        contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+                    }, 100); 
+                }
+            } else if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        handleAnchorScroll();
+
+    }, [location]); 
 
     useEffect(() => {
         const sections = document.querySelectorAll("section, .header");
@@ -397,7 +492,8 @@ const HomePage = () => {
 
     useEffect(() => {
         const backToTopButton = document.getElementById('back-to-top');
-        if (backToTopButton) {
+        // CORREÇÃO AQUI: Verificando se o elemento existe antes de adicionar o event listener
+        if (backToTopButton) { 
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
@@ -412,10 +508,9 @@ const HomePage = () => {
             <GlobalStyle />
             <MenuBar />
             <Header>
-                {/* HeroContentContainer engloba o texto e o carrossel para o layout responsivo */}
                 <HeroContentContainer>
                     <TitleContainer>
-                        <Title>Fabrício Ikehara Inamine</Title> {/* Adicionado o nome aqui */}
+                        <Title>Fabrício Ikehara Inamine</Title>
                         <Subtitle>Full-Stack Developer</Subtitle>
                         <AboutMe>
                             Hi! I’m Fabrício, a Full Stack Developer with a strong focus on Front-End development. I specialize in building responsive, user-friendly interfaces using HTML, CSS, JavaScript, React, and Angular, while also handling back-end tasks with PHP, Python and a little Bit of Java. Databases like MongoDB and MySQL.
@@ -434,7 +529,7 @@ const HomePage = () => {
                         </StacksContainer>
                     </TitleContainer>
 
-                    <CustomCarousel id="carouselExampleRide" className="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"> {/* data-bs-interval ajustado para 5000ms (5 segundos) */}
+                    <CustomCarousel id="carouselExampleRide" className="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <img src={c1} className="d-block w-100" alt="Sua foto 1" />
@@ -499,9 +594,12 @@ const HomePage = () => {
                 </div>
             </OceanSection>
 
-            <OceanFloorSection>
-                <h2>Contact</h2>
+            {/* Seção de Contato - Estilos Melhorados */}
+            <OceanFloorSection id="contact-section" ref={contactSectionRef}> 
+                <h2>Contact</h2> {/* Título principal da seção */}
                 <p>Thank you so much for taking the time to read through my portfolio! Until the next wave! 🌊😊</p>
+                
+                {/* Ícones Sociais Melhorados */}
                 <div className="social-icons">
                     <a href="https://www.instagram.com/fahhiroshi/" target="_blank" rel="noopener noreferrer">
                         <img src={insta} alt="Instagram" />
@@ -516,12 +614,15 @@ const HomePage = () => {
                         <img src={github} alt="GitHub" />
                     </a>
                 </div>
+
+                {/* Informações de Contato e Créditos */}
                 <div className="email">
                     <p>Email: <a href="mailto:fah.hiroshi@gmail.com">fah.hiroshi@gmail.com</a></p>
                 </div>
                 <div className="credits">
-                    <p>Developed by <a href="https://github.com/fabricioikehara" target="_blank">@Fabricio Ikehara Inamine</a></p>
+                    <p>Developed by <a href="https://github.com/fabricioikehara" target="_blank">@Fabrício Ikehara Inamine</a></p>
                 </div>
+                
                 <button id="back-to-top" title="Voltar ao topo">↑</button>
             </OceanFloorSection>
         </div>
