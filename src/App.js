@@ -13,7 +13,7 @@ import c3 from './assets/c3.png';
 import c4 from './assets/c4.png';
 import htmlLogo from './assets/html-logo.png';
 import cssLogo from './assets/css-logo.png';
-import jsLogo from './assets/js-logo.png'; // Verifique a extensão se for .jsx
+import jsLogo from './assets/js-logo.png'; 
 import reactLogo from './assets/react-logo.png';
 import angularLogo from './assets/angular-logo.png';
 import phpLogo from './assets/php-logo.png';
@@ -383,7 +383,7 @@ const OceanFloorSection = styled(Section)`
     h2 {
         font-family: 'Luckiest Guy', serif; /* Mantido o estilo de fonte */
         font-size: 2.8rem; /* Aumentado para mais impacto */
-        
+        margin-bottom: 40px;
         margin-top: 80px;
         z-index: 2;
         color: #ffffff;
@@ -492,7 +492,7 @@ const HomePage = () => {
 
     useEffect(() => {
         const backToTopButton = document.getElementById('back-to-top');
-        // CORREÇÃO AQUI: Verificando se o elemento existe antes de adicionar o event listener
+        // CORREÇÃO: A condição estava 'if (backTo topButton)' causando erro de referência. Corrigido para 'backToTopButton'.
         if (backToTopButton) { 
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({
