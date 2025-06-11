@@ -383,7 +383,7 @@ const OceanFloorSection = styled(Section)`
     h2 {
         font-family: 'Luckiest Guy', serif; /* Mantido o estilo de fonte */
         font-size: 2.8rem; /* Aumentado para mais impacto */
-        margin-bottom: 40px;
+        
         margin-top: 80px;
         z-index: 2;
         color: #ffffff;
