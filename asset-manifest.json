@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.fffd0469.css",
-    "main.js": "/portfolio/static/js/main.d18de109.js",
+    "main.css": "/portfolio/static/css/main.88bd8639.css",
+    "main.js": "/portfolio/static/js/main.5cdd82fe.js",
     "static/media/c2.png": "/portfolio/static/media/c2.8af36d563681789fe740.png",
     "static/media/c1.png": "/portfolio/static/media/c1.87b1446ab8c3feff22a3.png",
     "static/media/insta.png": "/portfolio/static/media/insta.636b865a6678f5ef7892.png",
@@ -9,20 +9,14 @@
     "static/media/whats.png": "/portfolio/static/media/whats.9a7f2ad11e24af3781ce.png",
     "static/media/linkedin.png": "/portfolio/static/media/linkedin.71bd493f7f5347d432e3.png",
     "static/media/c4.png": "/portfolio/static/media/c4.25eb7c01af8c44293343.png",
-    "static/media/projects.jpg": "/portfolio/static/media/projects.6e958fb27586f6e7674b.jpg",
     "static/media/react-logo.png": "/portfolio/static/media/react-logo.becbab0ab5d2271d2831.png",
     "static/media/php-logo.png": "/portfolio/static/media/php-logo.400d9f1701f39cc1fe57.png",
     "static/media/pokemontcg.jpg": "/portfolio/static/media/pokemontcg.8ff23b856e79ccca9328.jpg",
     "static/media/nutricao.jpg": "/portfolio/static/media/nutricao.57f0bca582bb7dcc2bce.jpg",
-    "static/media/sky-ocean.jpg": "/portfolio/static/media/sky-ocean.b889365361a3d9a1c0a6.jpg",
-    "static/media/Oceanabout.jpg": "/portfolio/static/media/Oceanabout.e81f251d94b220c9f13c.jpg",
     "static/media/comingsoon.jpg": "/portfolio/static/media/comingsoon.179218643ca41d0cee84.jpg",
-    "static/media/sky.jpg": "/portfolio/static/media/sky.cf15fdc1c04e3368791b.jpg",
-    "static/media/ocean.jpg": "/portfolio/static/media/ocean.9e3bf18056b81595fbf7.jpg",
     "static/media/angular-logo.png": "/portfolio/static/media/angular-logo.9fe4cc0c4f159317f309.png",
     "static/media/crudphp.jpg": "/portfolio/static/media/crudphp.1f89876807221a846f60.jpg",
     "static/media/sheets.jpg": "/portfolio/static/media/sheets.5f08c8c0d6b5cae24537.jpg",
-    "static/media/ocean-floor.jpg": "/portfolio/static/media/ocean-floor.8df312daf0424d3efc8d.jpg",
     "static/media/softcar.jpg": "/portfolio/static/media/softcar.c078ed5d9e0f62322443.jpg",
     "static/media/html-logo.png": "/portfolio/static/media/html-logo.1d7b133e22ffe4829da6.png",
     "static/media/java-logo.png": "/portfolio/static/media/java-logo.5d5cffa04d820ba0644c.png",
@@ -33,11 +27,11 @@
     "static/media/python-logo.png": "/portfolio/static/media/python-logo.f7f12e1bf59e577656a2.png",
     "static/media/github.png": "/portfolio/static/media/github.c8007a9fb185cb152ee6.png",
     "index.html": "/portfolio/index.html",
-    "main.fffd0469.css.map": "/portfolio/static/css/main.fffd0469.css.map",
-    "main.d18de109.js.map": "/portfolio/static/js/main.d18de109.js.map"
+    "main.88bd8639.css.map": "/portfolio/static/css/main.88bd8639.css.map",
+    "main.5cdd82fe.js.map": "/portfolio/static/js/main.5cdd82fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.fffd0469.css",
-    "static/js/main.d18de109.js"
+    "static/css/main.88bd8639.css",
+    "static/js/main.5cdd82fe.js"
   ]
 }
